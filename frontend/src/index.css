@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 350 70% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 25 75% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 94%;
+    --ring: 350 70% 35%;
+
+    --radius: 0.75rem;
+    
+    /* Custom design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(350 70% 35%), hsl(15 70% 50%));
+    --gradient-warm: linear-gradient(135deg, hsl(25 75% 60%), hsl(35 85% 70%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 99%), hsl(0 0% 97%));
+    
+    /* Hero gradient - maroon/food theme */
+    --hero-gradient-start: 350 70% 35%;
+    --hero-gradient-mid: 15 70% 50%;
+    --hero-gradient-end: 30 85% 65%;
+    
+    --shadow-soft: 0 2px 8px hsl(350 70% 35% / 0.08);
+    --shadow-medium: 0 4px 16px hsl(350 70% 35% / 0.12);
+    --shadow-strong: 0 8px 24px hsl(350 70% 35% / 0.16);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 0 0% 10%;
+
+    --sidebar-primary: 350 70% 35%;
+
+    --sidebar-primary-foreground: 0 0% 100%;
+
+    --sidebar-accent: 0 0% 96%;
+
+    --sidebar-accent-foreground: 0 0% 10%;
+
+    --sidebar-border: 0 0% 90%;
+
+    --sidebar-ring: 350 70% 35%;
+  }
+
+  .dark {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 350 70% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 25 75% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 22%;
+    --input: 0 0% 18%;
+    --ring: 350 70% 45%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(350 70% 35%), hsl(15 70% 40%));
+    --gradient-warm: linear-gradient(135deg, hsl(25 75% 55%), hsl(35 85% 60%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 12%), hsl(0 0% 10%));
+    
+    /* Hero gradient - maroon/food theme */
+    --hero-gradient-start: 350 70% 25%;
+    --hero-gradient-mid: 15 70% 35%;
+    --hero-gradient-end: 30 85% 45%;
+    
+    --shadow-soft: 0 2px 8px hsl(0 0% 0% / 0.3);
+    --shadow-medium: 0 4px 16px hsl(0 0% 0% / 0.4);
+    --shadow-strong: 0 8px 24px hsl(0 0% 0% / 0.5);
+    --sidebar-background: 0 0% 12%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 350 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 18%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 22%;
+    --sidebar-ring: 350 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
