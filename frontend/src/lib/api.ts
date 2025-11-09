@@ -5,6 +5,8 @@
 
 import { supabase } from '@/integrations/supabase/client';
 
+// Base URL for unified backend (main FastAPI app). On Vercel we serve it at root of backend project.
+// Ensure VITE_API_URL is set to https://doorsmash-backend.vercel.app
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 // ==================== HELPER FUNCTIONS ====================
@@ -342,7 +344,8 @@ export const ordersApi = {
 
 // ==================== CHATBOT API ====================
 
-const CHATBOT_API_URL = import.meta.env.VITE_CHATBOT_API_URL || 'http://localhost:8002';
+// Chatbot served at /chat on same backend deployment; allow separate env override for local dev
+const CHATBOT_API_URL = import.meta.env.VITE_CHATBOT_API_URL || `${API_BASE_URL}`;
 
 export interface ChatMessage {
   message: string;
@@ -362,7 +365,7 @@ export interface ChatResponse {
 // Chatbot API calls
 export const chatbotApi = {
   async sendMessage(data: ChatMessage): Promise<ChatResponse> {
-    const url = `${CHATBOT_API_URL}/chat`;
+  const url = `${CHATBOT_API_URL}/chat`;
     const response = await fetch(url, {
       method: 'POST',
       headers: {
